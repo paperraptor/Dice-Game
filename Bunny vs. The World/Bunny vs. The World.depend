@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1516057896 source:c:\users\ecarg\desktop\bunny vs. the world\bunny vs. the world.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+	<time.h>
+	<iostream>
+	<string>
+	"rock n paper.h"
+	"board.h"
+	"attckBar.h"
+
+1516057974 c:\users\ecarg\desktop\bunny vs. the world\board.h
+
+1515769071 source:p:\ics3u\bunny vs. the world\bunny vs. the world.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+	<time.h>
+	<iostream>
+	<string>
+	"rock n paper.h"
+	"board.h"
+	"attckBar.h"
+
+1515766664 p:\ics3u\bunny vs. the world\board.h
+
+1515766828 p:\ics3u\bunny vs. the world\attckbar.h
+
+1516030162 c:\users\ecarg\desktop\bunny vs. the world\attckbar.h
+
+1515766103 p:\ics3u\bunny vs. the world\rock n paper.h
+
+1515644055 source:c:\users\ecarg\desktop\bunny vs. the world (1)\bunny vs. the world\bunny vs. the world.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+	<time.h>
+	"board.h"
+	"attckBar.h"
+	"rock n paper.h"
+
+1515513796 c:\users\ecarg\desktop\bunny vs. the world (1)\bunny vs. the world\board.h
+
+1515595976 c:\users\ecarg\desktop\bunny vs. the world (1)\bunny vs. the world\attckbar.h
+
+1515644055 c:\users\ecarg\desktop\bunny vs. the world (1)\bunny vs. the world\rock n paper.h
+
+1515687166 source:p:\ics3u\bunny vs. the world (1)\bunny vs. the world\bunny vs. the world.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+	<time.h>
+	"board.h"
+	"attckBar.h"
+	"rock n paper.h"
+
+1515686819 p:\ics3u\bunny vs. the world (1)\bunny vs. the world\board.h
+
+1515685715 p:\ics3u\bunny vs. the world (1)\bunny vs. the world\attckbar.h
+
+1515687564 p:\ics3u\bunny vs. the world (1)\bunny vs. the world\rock n paper.h
+
+1516030250 c:\users\ecarg\desktop\bunny vs. the world\rock n paper.h
+
+1516032394 source:p:\bunny vs. the world (3)\bunny vs. the world\bunny vs. the world.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+	<time.h>
+	<iostream>
+	<string>
+	"rock n paper.h"
+	"board.h"
+	"attckBar.h"
+
+1516030249 p:\bunny vs. the world (3)\bunny vs. the world\rock n paper.h
+
+1516032087 p:\bunny vs. the world (3)\bunny vs. the world\board.h
+
+1516030161 p:\bunny vs. the world (3)\bunny vs. the world\attckbar.h
+

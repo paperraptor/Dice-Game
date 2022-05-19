@@ -1,0 +1,114 @@
+//#include"Bunny vs. The World.cpp"
+
+const int SCREEN_W = 640;       // screen width
+const int SCREEN_H = 640;
+
+void boundingBox(ALLEGRO_BITMAP *bmp1, ALLEGRO_BITMAP *bmp2,
+        float x1, float y1, float x2, float y2){
+    int height;
+    int width;
+    int height2;
+    int width2;
+
+    height = al_get_bitmap_height(bmp1);
+    width = al_get_bitmap_width(bmp1);
+    height2 = al_get_bitmap_height(bmp2);
+    width2 = al_get_bitmap_width(bmp2);
+
+    if (x1 + width/2 > x2 && x1 + width/2 < x2 + width2){
+        printf("You Hit HARD!!!");
+    }
+    else{
+        printf("Missed");
+    }
+}
+
+int attackBar(ALLEGRO_DISPLAY *display){
+    ALLEGRO_EVENT_QUEUE *event_queue = nullptr;
+    ALLEGRO_BITMAP *bar = nullptr;
+	ALLEGRO_BITMAP *arrow = nullptr;
+	ALLEGRO_BITMAP *hit = nullptr;
+	ALLEGRO_FONT *font = al_load_ttf_font("comicrelief.ttf", 36, 0);
+
+	int randomX = 0;
+	event_queue = al_create_event_queue();
+	if (!event_queue) {
+		al_show_native_message_box(display, "Error", "Error", "Failed to create event_queue!",
+                                 nullptr, ALLEGRO_MESSAGEBOX_ERROR);
+		al_destroy_display(display);
+      	return -1;
+	}
+	al_register_event_source(event_queue, al_get_keyboard_event_source());
+
+	bar = al_load_bitmap("bar.png");
+	al_convert_mask_to_alpha(bar, al_map_rgb(0, 255, 0));
+	arrow = al_load_bitmap("arrow.png");
+	al_convert_mask_to_alpha(arrow, al_map_rgb(0, 255, 0));
+	hit = al_load_bitmap("hit.png");
+	al_convert_mask_to_alpha(hit, al_map_rgb(0, 255, 0));
+
+    al_draw_bitmap(bar, SCREEN_W/7, SCREEN_H/2, 0);
+    al_flip_display();
+
+    srand(time(0));
+    randomX = rand() % al_get_bitmap_width(bar)- al_get_bitmap_width(hit) + SCREEN_W/7;
+
+    int x = 0;
+    bool doexit = false;
+
+	while(doexit == false){
+        ALLEGRO_EVENT ev;
+        ALLEGRO_TIMEOUT timeout;
+        al_init_timeout(&timeout, 0.001);
+        //al_wait_for_event_until(event_queue, &ev, &timeout);
+
+      	//if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+        //	doexit = true;
+      	//}
+
+        if(x < 640){
+            for (x =90; x<640; x++) {
+                al_clear_to_color(al_map_rgb(255, 255, 255));
+                al_draw_bitmap(bar, SCREEN_W/7, SCREEN_H/2, 0);
+                al_draw_bitmap(arrow, x, SCREEN_H/2 - 35, 0);
+                al_draw_bitmap(hit, randomX, SCREEN_H/2 + 23, 0);
+                al_flip_display();
+
+                al_rest(.001);
+
+                al_wait_for_event_until(event_queue, &ev, &timeout);
+
+                if (ev.type == ALLEGRO_EVENT_KEY_DOWN) {
+                    if (ev.keyboard.keycode == ALLEGRO_KEY_SPACE){
+                        doexit = true;
+                        boundingBox(arrow, hit, x, SCREEN_H/2 - 35, randomX, SCREEN_H/2 + 23);
+                        al_rest(3);
+                        break;
+                    }
+                }
+            }
+        }
+        else if (x >= 640){
+            for (x = 640; x>90; x--) {
+                al_clear_to_color(al_map_rgb(255, 255, 255));
+                al_draw_bitmap(bar, SCREEN_W/7, SCREEN_H/2, 0);
+                al_draw_bitmap(arrow, x, SCREEN_H/2 - 35, 0);
+                al_draw_bitmap(hit, randomX, SCREEN_H/2 + 23, 0);
+                al_flip_display();
+                al_rest(.001);
+
+                al_wait_for_event_until(event_queue, &ev, &timeout);
+
+                if (ev.type == ALLEGRO_EVENT_KEY_DOWN) {
+                    if (ev.keyboard.keycode == ALLEGRO_KEY_SPACE){
+                        doexit = true;
+                        boundingBox(arrow, hit, x, SCREEN_H/2 - 35, randomX, SCREEN_H/2 + 23);
+                        al_rest(3);
+                        break;
+                    }
+                }
+            }
+        }
+
+	}
+}
